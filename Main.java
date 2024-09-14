@@ -28,9 +28,7 @@ public class Main {
             double right = 0;
             boolean isRightX = false;
 
-            if (rightOG.equals("x")) {
-                isRightX = true;
-            } else {
+            if (!(rightOG.equals("x"))) {
                 right = Double.parseDouble(rightOG); // convert string to double which is just BIGger float
             }
 
@@ -57,20 +55,12 @@ public class Main {
                     }
                 }
 
-                if (coeffX == 0) { // if no coeff 8=8 8=9 8=x
-                    if (isRightX) { //like if 3=x
+                if (coeffX == 0) { // if no coeff eg 8=x
                         resultLabel.setText("x = " + String.valueOf(constant));
-                    } else {
-                        resultLabel.setText("error!!!!"); // grrr WHY NO X?????????
-                    }
                 } else { // actual algebra time!!
                     double x;
-                    if (isRightX) { // so if 3x=3 or similar was input
-                        x = constant / coeffX; // 3/3 if above example
-                    } else {
                         right = Double.parseDouble(rightOG);
                         x = (right - constant) / coeffX; // the eq for basic algebra
-                    }
                     resultLabel.setText("x = " + String.valueOf(x)); // type conversion to string
                 }
             }
@@ -138,7 +128,7 @@ public class Main {
 }
 
 
-    // sai w/ help from eshaan
+    // 3rd Function: sai w/ help from eshaan
     private static void GUI() { // most of this stuff self explanatory
         JFrame frame = new JFrame("");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
