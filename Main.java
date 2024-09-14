@@ -138,7 +138,7 @@ public class Main {
 }
 
 
-    // 3rd Function: sai w/ help from eshaan
+    // sai w/ help from eshaan
     private static void GUI() { // most of this stuff self explanatory
         JFrame frame = new JFrame("");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
