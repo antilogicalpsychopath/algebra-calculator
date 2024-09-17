@@ -130,20 +130,20 @@ public class Main {
 
     // 3rd Function: sai w/ help from eshaan
     private static void GUI() { // most of this stuff self explanatory
-        JFrame frame = new JFrame("");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 200);
-        JTextField textField = new JTextField(20);
-        textField.setMaximumSize(new Dimension(200, 25));
-        textField.setHorizontalAlignment(JTextField.CENTER);
-        JButton button = new JButton("solve");
-        JLabel resultLabel = new JLabel("");
-        JLabel Instr = new JLabel("Algebra Calculator");
+        JFrame frame = new JFrame(""); // make canvas
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // what happens when closed, exits
+        frame.setSize(300, 200); // size of window
+        JTextField textField = new JTextField(20); // for input
+        textField.setMaximumSize(new Dimension(200, 25)); // max size of the text field
+        textField.setHorizontalAlignment(JTextField.CENTER); // center text field
+        JButton button = new JButton("solve"); // solve text in button
+        JLabel resultLabel = new JLabel(""); // where answer will go out
+        JLabel Instr = new JLabel("Algebra Calculator"); // header
 
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String inputText = textField.getText();
-                if (inputText.contains("=")) {
+        button.addActionListener(new ActionListener() {  // listerner for when button clicked
+            public void actionPerformed(ActionEvent e) { // when button clicked
+                String inputText = textField.getText(); // get text from text field
+                if (inputText.contains("=")) { // algebra or arithmetic
                     algebraCalculator(inputText, resultLabel);
                 } else {
                     arithmeticCalculator(inputText, resultLabel);
@@ -151,27 +151,27 @@ public class Main {
             }
         });
 
-        JPanel verticalPanel = new JPanel();
+        JPanel verticalPanel = new JPanel(); // container
         verticalPanel.setLayout(new BoxLayout(verticalPanel, BoxLayout.Y_AXIS));
         verticalPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        verticalPanel.add(Box.createRigidArea(new Dimension(0, 20))); // area between spaces
+        verticalPanel.add(Instr); // header
         verticalPanel.add(Box.createRigidArea(new Dimension(0, 20)));
-        verticalPanel.add(Instr);
-        verticalPanel.add(Box.createRigidArea(new Dimension(0, 20)));
-        verticalPanel.add(textField);
+        verticalPanel.add(textField); // text field
         verticalPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-        verticalPanel.add(button);
+        verticalPanel.add(button); // button
         verticalPanel.add(Box.createRigidArea(new Dimension(0, 10)));
-        verticalPanel.add(resultLabel);
-        frame.setBackground(Color.decode("#7ba0b0"));
-        verticalPanel.setBackground(Color.decode("#7ba0b0"));
+        verticalPanel.add(resultLabel); // answer
+        frame.setBackground(Color.decode("#7ba0b0")); // color of frame
+        verticalPanel.setBackground(Color.decode("#7ba0b0")); // color of panel
 
-        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setAlignmentX(Component.CENTER_ALIGNMENT); // center button, result, header, and text field
         resultLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         Instr.setAlignmentX(Component.CENTER_ALIGNMENT);
         textField.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        frame.add(verticalPanel);
-        frame.setVisible(true);
+        frame.add(verticalPanel); // add panel
+        frame.setVisible(true); // show
     }
 }
