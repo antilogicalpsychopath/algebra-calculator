@@ -26,7 +26,6 @@ public class Main {
             String rightOG = sides[1].replaceAll(" ", "");
 
             double right = 0;
-            boolean isRightX = false;
 
             if (!(rightOG.equals("x"))) {
                 right = Double.parseDouble(rightOG); // convert string to double which is just BIGger float
